@@ -1,6 +1,15 @@
-<!-- <script>
-    import Card from "../../cards/card.svelte";
-</script> -->
+<script>
+    import Router, { location, link } from "svelte-spa-router";
+    import RegistroPessoa from "../registroPessoa/registroPessoa.svelte";
+    import RegistroAquario from "../registroAquario/registroAquario.svelte";
+</script>
+
+<Router
+    routes={{
+        "/registroUsuario": RegistroPessoa,
+        "/registro/:registroAquario": RegistroAquario,
+    }}
+/>
 
 <div class="conteudo">
     <div class="card">
@@ -23,12 +32,14 @@
                 </div>
 
                 <button>
-                    <h2>Login</h2>
+                    <h2>
+                        <a href="/#/registro/registroAquario">Login</a>
+                    </h2>
                 </button>
 
                 <div class="register">
                     <h3>
-                        <a href="">Crie sua conta</a>
+                        <a href="/#/registroUsuario">Crie sua conta</a>
                     </h3>
                 </div>
             </div>

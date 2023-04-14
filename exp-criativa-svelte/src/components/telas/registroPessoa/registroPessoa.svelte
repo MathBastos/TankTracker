@@ -1,3 +1,14 @@
+<script>
+    import Router, { location, link } from "svelte-spa-router";
+    import Login from "../login/login.svelte";
+</script>
+
+<Router
+    routes={{
+        "/login": Login,
+    }}
+/>
+
 <div class="conteudo">
     <div class="card">
         <div class="ttl">
@@ -19,7 +30,9 @@
             </div>
 
             <button>
-                <h2>Registre-se</h2>
+                <h2>
+                    <a href="/#/login">Enviar</a>
+                </h2>
             </button>
         </div>
     </div>
