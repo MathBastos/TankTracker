@@ -1,0 +1,43 @@
+{% extends "aquario/index.html" %}
+{% block content %}
+<div class="container-fluid px-4">
+    <div class="row">
+        <div class="vertical-center">
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                    Cadastrar Nova Forma de Cobrança
+                    </div>
+                    <div class="card-body">
+                        <form class="row g-3 justify-content-center" enctype="multipart/form-data" action="{{ url }}" method="POST">
+                            <div class="col-md-6">
+                                <label for="nome" class="form-label">Nome</label>
+                                <input class="form-control" type="text" value="{{ nome }}" name="nome" id = "nome">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="id_tamanho" class="form-label">Tamanho</label>
+                                <select class="form-select" id = "id_tamanho" name="id_tamanho">
+                                    {% for value in values %}
+                                        <option 
+                                        {% if value.id == id_tamanho %}
+                                            selected
+                                        {% endif %}
+                                        value="{{ value.id }}">{{ value.nome }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="quantidade_peixes" class="form-label">Quantidade de Peixes</label>
+                                <input class="form-control" type="number" value="{{ quantidade_peixes }}" name="quantidade_peixes" id = "quantidade_peixes">
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="float-right btn btn-primary">Cadastrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
