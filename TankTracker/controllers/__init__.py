@@ -1,0 +1,3 @@
+from controllers.usuario_controller import usuario
+from controllers.aquario_controller import aquario
+from controllers.login_controller import login
